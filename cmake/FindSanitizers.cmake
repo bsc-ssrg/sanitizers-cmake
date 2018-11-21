@@ -38,6 +38,7 @@ find_package(ASan ${FIND_QUIETLY_FLAG})
 find_package(TSan ${FIND_QUIETLY_FLAG})
 find_package(MSan ${FIND_QUIETLY_FLAG})
 find_package(UBSan ${FIND_QUIETLY_FLAG})
+find_package(LeakSan ${FIND_QUIETLY_FLAG})
 
 
 
@@ -90,5 +91,6 @@ function(add_sanitizers ...)
         add_sanitize_thread(${TARGET})
         add_sanitize_memory(${TARGET})
         add_sanitize_undefined(${TARGET})
+        add_sanitize_leak(${TARGET})
 	endforeach ()
 endfunction(add_sanitizers)
